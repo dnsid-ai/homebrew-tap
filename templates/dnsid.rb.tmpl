@@ -1,0 +1,44 @@
+cask "dnsid" do
+  version "@VERSION@"
+
+  on_macos do
+    on_arm do
+      sha256 "@SHA_DARWIN_ARM64@"
+      url "@ARTIFACT_BASE@/#{version}/dnsid_darwin_arm64.tar.gz"
+    end
+    on_intel do
+      sha256 "@SHA_DARWIN_AMD64@"
+      url "@ARTIFACT_BASE@/#{version}/dnsid_darwin_amd64.tar.gz"
+    end
+  end
+  on_linux do
+    on_arm do
+      sha256 "@SHA_LINUX_ARM64@"
+      url "@ARTIFACT_BASE@/#{version}/dnsid_linux_arm64.tar.gz"
+    end
+    on_intel do
+      sha256 "@SHA_LINUX_AMD64@"
+      url "@ARTIFACT_BASE@/#{version}/dnsid_linux_amd64.tar.gz"
+    end
+  end
+
+  name "dnsid"
+  desc "Agent identity management CLI for DNSid"
+  homepage "https://dnsid.ai"
+
+  livecheck do
+    skip "Published on release."
+  end
+
+  binary "dnsid"
+
+  postflight do
+    # The binaries are unsigned and un-notarized. Homebrew stamps
+    # com.apple.quarantine on staged cask payloads, and Gatekeeper kills a
+    # quarantined unsigned Mach-O on first exec. Remove this once the darwin
+    # builds are signed and notarized.
+    if OS.mac?
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/dnsid"]
+    end
+  end
+end
