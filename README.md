@@ -57,4 +57,7 @@ The download host is stated in exactly one place, `ARTIFACT_BASE` in
 edit here and a re-run — the CLI's own repository holds no Homebrew
 configuration and needs no credential for this tap.
 
+The dnsid binary this tap installs is distributed under the terms in
+[LICENSE](LICENSE).
+
 Issues with the CLI itself belong on the upstream tracker, not here.
