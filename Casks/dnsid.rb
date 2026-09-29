@@ -6,21 +6,21 @@ cask "dnsid" do
   on_macos do
     on_arm do
       sha256 "b7365b8c1a2ada0ab06ed40e36f627eeb510b02969820c2daee892b96ad9ee40"
-      url "https://dnsid-prod-cli-binaries.s3.us-east-1.amazonaws.com/cli/#{version}/dnsid_darwin_arm64.tar.gz"
+      url "https://downloads.dnsid.ai/cli/#{version}/dnsid_darwin_arm64.tar.gz"
     end
     on_intel do
       sha256 "bfde1eb0940fa472db12aa31b19c13f728059a0cbed9e506421eea74671d341b"
-      url "https://dnsid-prod-cli-binaries.s3.us-east-1.amazonaws.com/cli/#{version}/dnsid_darwin_amd64.tar.gz"
+      url "https://downloads.dnsid.ai/cli/#{version}/dnsid_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
       sha256 "05cd6a883485da07efcac8c97b80b7a6d9f7e80fdb93911b68048b24e50162ff"
-      url "https://dnsid-prod-cli-binaries.s3.us-east-1.amazonaws.com/cli/#{version}/dnsid_linux_arm64.tar.gz"
+      url "https://downloads.dnsid.ai/cli/#{version}/dnsid_linux_arm64.tar.gz"
     end
     on_intel do
       sha256 "0653ef1dd0fae4285a14745201f8f4eafffd2d515011fc230c587cd153179a24"
-      url "https://dnsid-prod-cli-binaries.s3.us-east-1.amazonaws.com/cli/#{version}/dnsid_linux_amd64.tar.gz"
+      url "https://downloads.dnsid.ai/cli/#{version}/dnsid_linux_amd64.tar.gz"
     end
   end
 
